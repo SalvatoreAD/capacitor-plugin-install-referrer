@@ -36,6 +36,7 @@ public class InstallReferrerPlugin extends Plugin {
                             ret.put("appInstallTime", appInstallTime);
                             ret.put("instantExperienceLaunched", instantExperienceLaunched);
                             call.resolve(ret);
+                            referrerClient.endConnection();
                         } catch (RemoteException e) {
                             call.reject("Cannot get ReferrerDetails");
                         }
